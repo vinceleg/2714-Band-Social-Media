@@ -5,6 +5,8 @@ body{
     font-family: sans-serif;
 }
 
+
+
 .logo{
     width: 100px;
     height:100px;
@@ -14,9 +16,11 @@ body{
 }
 
 .loginbox{
-  width:  320px;
-  height: 450px;
+  width:  500px;
+  height: 460px;
   color:  #fff;
+  opacity: 0.9;
+ filter: alpha(opacity=50);
   top: 50%;
   left: 50%;
   position: absolute;
@@ -78,6 +82,3 @@ h1{
     line-height: 20px;
     color: darkgrey;
 }
-
-
-

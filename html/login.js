@@ -7,9 +7,10 @@ var path = require('path');
 var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : '',
-	database : 'bandSocialMedia'
+	password : 'Yoonaim12',
+	database : 'bandsocialmedia'
 });
+
 
 var app = express();
 app.use(session({
@@ -20,17 +21,15 @@ app.use(session({
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
-app.get('/', function(request, response) {
-	console.log(__dirname)
-	response.sendFile(path.join(__dirname + '/html/login.html'));
-	//response.sendFile(__dirname +'/html/login.html');
-});
+app.get('/', (request, response) => {
+	response.sendFile(path.join(__dirname + '/login.html'));
+})
 
 app.post('/auth', function(request, response) {
 	var username = request.body.username;
 	var password = request.body.password;
 	if (username && password) {
-		connection.query('SELECT * FROM users WHERE email = ? AND pw = ?', [username, password], function(error, results, fields) {
+		connection.query('SELECT * FROM accounts WHERE email = ? AND pw = ?', [username, password], function(error, results, fields) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
@@ -46,8 +45,6 @@ app.post('/auth', function(request, response) {
 	}
 });
 
-
-
 app.get('/home', function(request, response) {
 	if (request.session.loggedin) {
 		response.send('Welcome back, ' + request.session.username + '!');
@@ -57,5 +54,6 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
-app.listen(3000);
-
+app.listen(3000, () => {
+	console.log("Server is up and listening on 3000...")
+});

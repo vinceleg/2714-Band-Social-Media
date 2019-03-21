@@ -27,15 +27,6 @@ CREATE TABLE events(
     location VARCHAR(60) NOT NULL,
     date VARCHAR (40) NOT NULL,
     organizer_id INT NOT NULL);
-    
-CREATE TABLE bands_events(
-	band_id INT NOT NULL,
-	event_id INT NOT NULL,
-	confirmed TINYINT(4),
-	FOREIGN KEY (band_id) REFERENCES bands (band_id),
-	FOREIGN KEY (event_id) REFERENCES events (event_id),
-	PRIMARY KEY (band_id, event_id)
-);
 
 CREATE TABLE bands_events(
 band_id INT NOT NULL,

@@ -26,10 +26,10 @@ app.get('/', (request, response) => {
 })
 
 app.post('/auth', function(request, response) {
-	var username = request.body.username;
-	var password = request.body.password;
-	if (username && password) {
-		connection.query('SELECT * FROM accounts WHERE email = ? AND pw = ?', [username, password], function(error, results, fields) {
+	var email = request.body.username;
+	var pw = request.body.password;
+	if (email && pw) {
+		connection.query('SELECT * FROM accounts WHERE email = ? AND pw = ?', [email, pw], function(error, results, fields) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;

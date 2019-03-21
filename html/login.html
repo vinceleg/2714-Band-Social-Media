@@ -16,11 +16,11 @@
         <div class = "loginbox">
         <img src="https://cdn3.iconfinder.com/data/icons/social-media-logos-flat-colorful/2048/5338_-_iTunes-512.png" class="logo">
         <h1>Login</h1>
-        <form>
+        <form action="auth" method="POST">
                 <p>Email</p>
-                <input type="text" name="" placeholder="Enter Username">
+                <input type="text" name="username" placeholder="Enter Username" required> 
                 <p>Password</p>
-                <input type="password" name="" placeholder="Enter Password">
+                <input type="password" name="password" placeholder="Enter Password" required>
                 <input type="submit" name ="" value="Login">
                 <a href="#">Lost your password?</a><br>
                 <a href="../html/register.html"> Don't have an account?</a>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+band edit
+<p th:text=${bandId} />
+
+<h3>Welcome, Enter The Band Details</h3>
+<form method="POST"
+           action="/bands/save" modelAttribute="band">
+    <table>
+        <tr>
+            <td><label path="name">Name</label></td>
+            <td><input type="text" name="name" th:value="${band['name']}" /></td>
+        </tr>
+        <tr>
+            <td><label path="musicGenre">Music Genre</label></td>
+            <td>
+                <input type="text" name="musicGenre" th:value="${band['musicGenre']}" />
+                <input type="hidden" name="bandId" th:value="${band['bandId']}" />
+                <input type="hidden" name="numberOfMembers" th:value="${band['numberOfMembers']}" />
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

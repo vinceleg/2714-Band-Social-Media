@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+Band list
+
+<table>
+    <tr>
+        <td>ID :</td>
+        <td>Name :</td>
+        <td>Number of Members:</td>
+        <td>Music Genre:</td>
+    </tr>
+    <tr th:each="band: ${bands}">
+        <td th:text="${band.bandId}" />
+        <td/>
+            <a th:href="'/bands/'+${band.bandId}" th:text="${band.name}"></a>
+        </td>
+        <td th:text="${band.numberOfMembers}" />
+        <td th:text="${band.musicGenre}" />
+    </tr>
+</table>
+
+<button><a href="/bands/add"> add </a> </button>
+
+
+</body>
+</html>

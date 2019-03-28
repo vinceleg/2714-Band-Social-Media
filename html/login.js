@@ -7,9 +7,17 @@ var path = require('path');
 var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : '',
+	password : 'password',
 	database : 'bandSocialMedia'
 });
+
+connection.connect((err) => {
+	if(err){
+	  console.log('Error connecting to Db');
+	  return;
+	}
+	console.log('Connection established');
+   });
 
 var app = express();
 app.use(session({
@@ -57,5 +65,6 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
-app.listen(3000);
-
+app.listen(3000, function(){
+	console.log('Server running at port 3000: http://127.0.0.1:3000')
+})

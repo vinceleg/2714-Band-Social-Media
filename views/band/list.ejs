@@ -1,0 +1,58 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %>
+
+<a href='bands/add'>Add New Band</a> &nbsp;
+
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>	
+
+<table width='80%' border=0>
+
+	<tr style='text-align:left; background-color:#CCC'>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Members</th>
+		<th>Music Genre</th>
+		<th>Actions</th>
+	</tr>
+	
+	<!--
+		Using FOREACH LOOP for the bands array
+		
+		myArray.forEach(function(el, index) {
+			// el - current element, i - index
+		});
+	-->
+	<% if (data) { %>
+	<% data.forEach(function(band){ %>
+		<tr>
+			<td><%= band.band_id %></td>
+			<td><%= band.name %></td>
+			<td><%= band.number_of_members %></td>
+			<td><%= band.music_genre %></td>
+			<td>
+				<div style="float:left">
+					<a href='bands/edit/<%= band.band_id %>'>Edit</a> &nbsp;
+					<form method="post" action="/bands/delete/<%= band.band_id %>" style="float:right">
+						<input type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
+						<input type="hidden" name="_method" value="DELETE" />
+					</form>
+				</div>
+			</td>
+		</tr>
+	<% }) %>
+	<% } %>
+
+</table>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

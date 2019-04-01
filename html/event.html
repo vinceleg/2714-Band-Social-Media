@@ -7,6 +7,7 @@
     <title>Event</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">a
     <link rel="stylesheet" href="../css/website.css">
+
 </head>
 <body>
 <header>
@@ -25,21 +26,13 @@
 
     <div class="card">
         <img alt="event-img">
-        <h1>Name</h1>
-        <p>Location</p>
-        <p>Date</p>
+        <h1 id="name">Name</h1>
+        <p id="location">Location</p>
+        <p id="date">Date</p>
         <p>Bands</p>
         <ul id="bands"></ul>
-        <script>
-                let numberOfBands = 1;
-                let node = document.createElement("LI");
-                let text = document.createTextNode("band1");
-                node.appendChild(text);
-                for (let i = 0; i < numberOfBands; i++) {
-                    document.getElementById("bands").appendChild(node);
-                }
-        </script>
         <p><button>Apply</button></p>
+        <script src="../js/event.js"></script>
     </div>
 </header>
 </body>

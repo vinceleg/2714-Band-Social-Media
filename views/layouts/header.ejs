@@ -1,12 +1,23 @@
 <html>
 	<head>
 		<title><%= title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css"   href="/css/website.css">
 	</head>
 	<body>
-		<div>
-			<a href="/">Home</a> | 
-			<a href="/users/add">Add New User</a> | 
-			<a href="/users">All Users List</a> |
-			<a href="/bands">Bands List</a>
+
+	<header>
+		<div class = "container">
+				<img src ="https://cdn3.iconfinder.com/data/icons/social-media-logos-flat-colorful/2048/5338_-_iTunes-512.png" alt= "logo" class ="logo">
+				<nav>
+					<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/users/add">Add New User</a></li>
+					<li><a href="/users">All Users List</a></li>
+					<li><a href="/bands">Bands List</a></li>
+					</ul>
+				</nav>
 		</div>	
-		<h1><%= title %></h1>
+		</header>
+		<h1 style = "color:white"><%= title %></h1>

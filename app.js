@@ -33,6 +33,8 @@ app.use(myConnection(mysql, dbOptions, 'pool'))
  */ 
 app.set('view engine', 'ejs')
 
+app.use(express.static('public'));
+
 /**
  * import routes/index.js
  * import routes/users.js

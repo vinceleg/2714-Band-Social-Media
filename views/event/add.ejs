@@ -11,7 +11,14 @@ including header content which is common for all pages
 	<p style="color:green"><%- messages.success %></p>
 <% } %>
 
-<form action="/bands/add" method="post" name="form1">
+<style>
+
+	td{
+		color:white;
+	}
+</style>
+
+<form action="/events/add" method="post" name="form1">
 	<table width="25%" border="0">
 		<tr> 
 			<td>Event Name</td>
@@ -23,7 +30,7 @@ including header content which is common for all pages
 		</tr>
 		<tr> 
 			<td>Date</td>
-			<td><input type="text" name="music_genre" value="<%= music_genre %>" /></td>
+			<td><input type="text" name="date" value="<%= date %>" /></td>
 		</tr>
 		<tr> 
 			<td></td>

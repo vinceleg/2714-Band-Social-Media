@@ -38,11 +38,13 @@ app.use(express.static('public'));
 /**
  * import routes/index.js
  * import routes/users.js
+ * import routes/bands.js
+ * import routes/events.js
  */ 
 var index = require('./routes/index')
 var users = require('./routes/users')
 var bands = require('./routes/bands')
-
+var events = require('./routes/events')
 
 /**
  * Express Validator Middleware for Form Validation
@@ -111,7 +113,8 @@ app.use(flash())
 
 app.use('/', index)
 app.use('/users', users)
-app.use('/bands', bands);
+app.use('/bands', bands)
+app.use('/events', events);
 
 
 app.listen(3000, function(){

@@ -29,9 +29,9 @@ app.get('/', function(req, res, next) {
     })
 })
 
-// SHOW ADD USER FORM
+// SHOW ADD BAND FORM
 app.get('/add', function(req, res, next){
-    // render to views/user/add.ejs
+    // render to views/band/add.ejs
     res.render('band/add', {
         title: 'Add New User',
         name: '',

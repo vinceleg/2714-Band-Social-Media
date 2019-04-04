@@ -3,7 +3,7 @@ including header content which is common for all pages
 -->
 <%- include ../layouts/header.ejs %>
 
-<a href='bands/add'>Add New Band</a> &nbsp;
+<a href='events/add'>Add New Event</a> &nbsp;
 
 <% if (messages.error) { %>
 	<p style="color:red"><%- messages.error %></p>
@@ -12,6 +12,12 @@ including header content which is common for all pages
 <% if (messages.success) { %>
 	<p style="color:green"><%- messages.success %></p>
 <% } %>	
+
+<style>
+	td{
+		color:white;
+	}
+</style>
 
 <table width='80%' border=0>
 
@@ -31,16 +37,16 @@ including header content which is common for all pages
 		});
 	-->
 	<% if (data) { %>
-	<% data.forEach(function(band){ %>
+	<% data.forEach(function(event){ %>
 		<tr>
 			<td><%= event.event_id %></td>
 			<td><%= event.name %></td>
-			<td><%= event.Location %></td>
+			<td><%= event.location %></td>
 			<td><%= event.date %></td>
 			<td>
 				<div style="float:left">
-					<a href='bands/edit/<%= band.band_id %>'>Edit</a> &nbsp;
-					<form method="post" action="/bands/delete/<%= band.band_id %>" style="float:right">
+					<a href='events/edit/<%= event.event_id %>'>Edit</a> &nbsp;
+					<form method="post" action="/events/delete/<%= event.event_id %>" style="float:right">
 						<input type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
 						<input type="hidden" name="_method" value="DELETE" />
 					</form>

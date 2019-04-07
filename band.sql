@@ -2,11 +2,10 @@ CREATE DATABASE bandSocialMedia;
 USE bandSocialMedia;
 
 CREATE TABLE users(
-    user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(40) UNIQUE NOT NULL, 
     age INT(11) NOT NULL,
-    name VARCHAR(100) NOT NULL,
-    pw VARCHAR(20) NOT NULL
+    name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE instruments(
@@ -38,20 +37,20 @@ PRIMARY KEY (band_id, event_id)
 );
 
 CREATE TABLE users_bands(
-	user_id INT NOT NULL,
+	id INT NOT NULL,
     band_id INT NOT NULL,
     confirmed TINYINT,
-    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    FOREIGN KEY (id) REFERENCES users (id),
     FOREIGN KEY (band_id) REFERENCES bands (band_id),
-    PRIMARY KEY (user_id, band_id)
+    PRIMARY KEY (id, band_id)
 );
 
 CREATE TABLE users_instruments(
-	user_id INT NOT NULL,
+	id INT NOT NULL,
     instrument_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    FOREIGN KEY (id) REFERENCES users (id),
     FOREIGN KEY (instrument_id) REFERENCES instruments (instrument_id),
-    PRIMARY KEY (user_id, instrument_id)
+    PRIMARY KEY (id, instrument_id)
 );
 
 

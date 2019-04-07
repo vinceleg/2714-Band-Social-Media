@@ -4,8 +4,8 @@ USE bandSocialMedia;
 CREATE TABLE users(
     user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(40) UNIQUE NOT NULL, 
-    first_name VARCHAR(40) NOT NULL,
-    last_name VARCHAR(40) NOT NULL,
+    age INT(11) NOT NULL,
+    name VARCHAR(100) NOT NULL,
     pw VARCHAR(20) NOT NULL
 );
 

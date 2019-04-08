@@ -24,8 +24,7 @@ CREATE TABLE events(
 	event_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(40) NOT NULL,
     location VARCHAR(60) NOT NULL,
-    date VARCHAR (40) NOT NULL,
-    organizer_id INT NOT NULL);
+    date VARCHAR (40) NOT NULL;
 
 CREATE TABLE bands_events(
 band_id INT NOT NULL,
